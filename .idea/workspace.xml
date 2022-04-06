@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d2d2c9f-9b51-4d2e-8991-fb036e8b9897" name="변경" comment="">
       <change afterPath="$PROJECT_DIR$/core/TodoCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoList.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Component.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/Component.js" afterDir="false" />
