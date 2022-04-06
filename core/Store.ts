@@ -4,5 +4,6 @@ export class Store {
   constructor(state) {
     this._state = state;
   }
-  observer(state) {}
+  observer(state) {
+  }
 }

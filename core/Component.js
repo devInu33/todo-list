@@ -1,9 +1,9 @@
 export default class Component {
   state;
   $props;
-  #el;
-  constructor(el, props = {}) {
-    this.#el = el;
+  #target;
+  constructor(target, props = {}) {
+    this.#target = target;
     this.$props = props;
     this.setup();
     this.setEvent();
@@ -12,11 +12,10 @@ export default class Component {
   setup() {}
   setState(newState) {
     this.state = { ...this.state, ...newState };
-    this.render();
   }
 
   render() {
-    this.#el.innerHTML = this.template();
+    this.#target.innerHTML = this.template();
     this.mount();
   }
   mount() {}
@@ -27,10 +26,10 @@ export default class Component {
   setEvent() {}
 
   select(selector) {
-    return this.#el.querySelector(selector);
+    return this.#target.querySelector(selector);
   }
 
   selectAll(selector) {
-    return this.#el.querySelectorAll(selector);
+    return this.#target.querySelectorAll(selector);
   }
 }

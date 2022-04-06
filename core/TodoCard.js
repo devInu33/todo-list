@@ -2,9 +2,10 @@ import Component from "./Component.js";
 
 export class TodoCard extends Component {
   template() {
+    const {todo, idx} = this.$props;
     return `
      <div class="wrapper">
-                <h2 class="card-title"></h2><span class="card-content"></span><span class="card-caption"></span>
+                <h2 class="card-title">${todo.title}</h2><span class="card-content">${todo.content}</span><span class="card-caption">${todo.caption}</span>
             </div>
             <span class="delete-card">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,5 +15,7 @@ export class TodoCard extends Component {
                 </svg></span>
     `;
   }
-  setEvent() {}
+  setEvent() {
+
+  }
 }
