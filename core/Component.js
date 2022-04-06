@@ -1,19 +1,27 @@
 export default class Component {
   state;
+<<<<<<< HEAD
   #el;
   constructor(el) {
     this.#el = el;
+=======
+  $props;
+  #target;
+  constructor(target, props = {}) {
+    this.#target = target;
+    this.$props = props;
+    this.setup();
+>>>>>>> f6aa78c (FEAT: mockdata 렌더링)
     this.setEvent();
     this.render();
   }
 
   setState(newState) {
     this.state = { ...this.state, ...newState };
-    this.render();
   }
 
   render() {
-    this.#el.innerHTML = this.template();
+    this.#target.innerHTML = this.template();
     this.mount();
   }
   mount() {}
@@ -24,10 +32,10 @@ export default class Component {
   setEvent() {}
 
   select(selector) {
-    return this.#el.querySelector(selector);
+    return this.#target.querySelector(selector);
   }
 
   selectAll(selector) {
-    return this.#el.querySelectorAll(selector);
+    return this.#target.querySelectorAll(selector);
   }
 }

@@ -1,14 +1,19 @@
 import Component from "./Component";
 
 export class TodoList extends Component {
+<<<<<<< HEAD
   template() {
     const { lists } = this.state;
+=======
+
+  template() {
+    const { list:{title,todos,selected}, idx } = this.$props;
+    console.log(todos);
+>>>>>>> f6aa78c (FEAT: mockdata 렌더링)
     return `
 <div class="todo-title">
             <span class="todo-name">${title}
-              <div class="count"><span class="number">${
-                todos.length
-              }</span></div>
+              <div class="count"><span class="number">${todos.length}</span></div>
             </span>
       <div class="todo-title-btn">
                 <span class="add">
@@ -28,6 +33,7 @@ export class TodoList extends Component {
       </div>
     </div>
     ${todos
+<<<<<<< HEAD
       .map(
         (todo, idx) => `<div class="todo-card" data-idx=${idx}>    
   </div>`
@@ -38,5 +44,14 @@ export class TodoList extends Component {
     for (let i = 0; i < todos.length; i++) {
       new TodoCard(this.select(`.todo-card[data-idx='${i}']`));
     }
+=======
+      .map((todo, idx) =>`<div class="todo-card" data-idx=${idx}></div>`)
+      .join("")}`;
+  }
+  mount() {
+    const{list:{todos}} = this.$props;
+    const card = this.select(`.todo-card[data-idx="0"]`)
+    for(let i=0; i<todos.length;i++)new TodoCard(this.select(`.todo-card[data-idx="${i}"]`), {todo:todos[i], idx:i})
+>>>>>>> f6aa78c (FEAT: mockdata 렌더링)
   }
 }
